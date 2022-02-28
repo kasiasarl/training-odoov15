@@ -48,6 +48,23 @@
             </field>
         </record>
 
+        <record id="student_management_search" model="ir.ui.view">
+            <field name="name">Student Management</field>
+            <field name="model">student.management</field>
+            <field name="arch" type="xml">
+                <search string="">
+                    <field name="name"/>
+                    <field name="address"/>
+                    <filter string="Male" name="male" domain="[('sexe', '=', 'm')]"/>
+                    <separator/>
+                    <filter string="Female" name="female" domain="[('sexe', '=', 'f')]"/>
+                    <group expand="1" string="Group By">
+                        <filter string="Sexe" name='sexe' context="{'group_by':'sexe'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+
         <menuitem id="student_main_menu" name="Student" web_icon="kasia_training,static/description/web_icon.png"/>
         <menuitem id="student_management_menu"
                   name="Student Management"
