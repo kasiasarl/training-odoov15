@@ -9,6 +9,7 @@
                     <field name="age"/>
                     <field name="sexe"/>
                     <field name="address"/>
+                    <field name="birth_date"/>
                 </tree>
             </field>
         </record>
@@ -21,12 +22,17 @@
                 <form string="">
                     <sheet>
                         <group>
-                            <field name="name"/>
-                            <field name="age" required="True"/>
-                            <field name="sexe"/>
-                            <field name="address"/>
-                            <field name="phone"/>
-                            <field name="image"/>
+                            <group>
+                                <field name="name"/>
+                                <field name="age" required="True"/>
+                                <field name="sexe"/>
+                                <field name="address"/>
+                            </group>
+                            <group>
+                                <field name="phone"/>
+                                <field name="image"/>
+                                <field name="birth_date"/>
+                            </group>
                         </group>
                     </sheet>
                 </form>

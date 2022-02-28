@@ -13,3 +13,4 @@ class StudentManagement(models.Model):
     address = fields.Char(string='Address')
     phone = fields.Char(string='Phone')
     image = fields.Image(string='Image')
+    birth_date = fields.Date(string='Birth date')
