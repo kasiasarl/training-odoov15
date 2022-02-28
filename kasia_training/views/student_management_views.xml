@@ -1,0 +1,59 @@
+<odoo>
+    <data>
+        <record id="student_management_tree" model="ir.ui.view">
+            <field name="name">Student Management Tree</field>
+            <field name="model">student.management</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                    <field name="age"/>
+                    <field name="sexe"/>
+                    <field name="address"/>
+                </tree>
+            </field>
+        </record>
+
+
+        <record id="student_management_form" model="ir.ui.view">
+            <field name="name">Student Management Form</field>
+            <field name="model">student.management</field>
+            <field name="arch" type="xml">
+                <form string="">
+                    <sheet>
+                        <group>
+                            <field name="name"/>
+                            <field name="age" required="True"/>
+                            <field name="sexe"/>
+                            <field name="address"/>
+                            <field name="phone"/>
+                            <field name="image"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="student_management_action" model="ir.actions.act_window">
+            <field name="name">Student Management</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">student.management</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    Tutoriel sur création data
+                </p>
+                <p>
+                    <!-- More details about what a user can do with this object will be OK -->
+                </p>
+            </field>
+        </record>
+
+        <menuitem id="student_main_menu" name="Student" web_icon="kasia_training,static/description/web_icon.png"/>
+        <menuitem id="student_management_menu"
+                  name="Student Management"
+                  parent="kasia_training.student_main_menu"
+                  action="student_management_action"/>
+
+
+    </data>
+</odoo>
