@@ -25,7 +25,7 @@
                             <group>
                                 <field name="name"/>
                                 <field name="age" required="True"/>
-                                <field name="sexe"/>
+                                <field name="sexe" widget="radio" options="{'horizontal': true}"/>
                                 <field name="address"/>
                             </group>
                             <group>
@@ -39,7 +39,7 @@
                                 <field name="biographie" nolabel="1"/>
                             </page>
                             <page string="Note">
-                                <field name="image_1920" />
+                                <field name="image_1920" widget="image"/>
                             </page>
                         </notebook>
 

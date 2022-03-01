@@ -20,9 +20,14 @@
 
     # always loaded
     'data': [
+        # data
+        # security
         'security/ir.model.access.csv',
+        # views
         'views/student_management_views.xml',
+        'views/course_management_views.xml',
         'views/templates.xml',
+        # wizads
     ],
     # only loaded in demonstration mode
     'demo': [

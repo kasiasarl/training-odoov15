@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="course_management_tree" model="ir.ui.view">
+            <field name="name">Course Management Tree</field>
+            <field name="model">course.management</field>
+            <field name="arch" type="xml">
+                <tree string="">
+                    <field name="name"/>
+                    <field name="course_date"/>
+                    <field name="partner_id"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="course_management_form" model="ir.ui.view">
+            <field name="name">Course Managment Form</field>
+            <field name="model">course.management</field>
+            <field name="arch" type="xml">
+                <form string="">
+                    <sheet>
+                        <group>
+                            <field name="name"/>
+                            <field name="course_date"/>
+                            <field name="partner_id"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+
+        <record id="course_management_action" model="ir.actions.act_window">
+            <field name="name">Course Management Action</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">course.management</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem id="course_management_menu" name="Course Management" parent="student_main_menu"
+                  action="course_management_action"/>
+
+    </data>
+</odoo>

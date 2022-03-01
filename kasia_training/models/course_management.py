@@ -6,4 +6,6 @@ class CourseManagement(models.Model):
     _name = 'course.management'
     _description = 'Course Management'
 
-    name = fields.Char()
+    name = fields.Char(string='Name', required='')
+    course_date = fields.Datetime(string='Date', required=True)
+    partner_id = fields.Many2one('res.partner', string='Partner')
