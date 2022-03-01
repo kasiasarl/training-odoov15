@@ -9,7 +9,9 @@
                 <tree string="">
                     <field name="name"/>
                     <field name="course_date"/>
+                    <field name="course_end"/>
                     <field name="partner_id"/>
+                    <field name="state"/>
                 </tree>
             </field>
         </record>
@@ -19,14 +21,33 @@
             <field name="model">course.management</field>
             <field name="arch" type="xml">
                 <form string="">
+                    <header>
+                        <button name="run_validate" class="oe_highlight" type="object" string="Validate" attrs="{'invisible':[('state','=','validated')]}"/>
+                        <field name="state" widget="statusbar"  options="{'clickable': '1'}"/>
+                    </header>
                     <sheet>
                         <group>
                             <field name="name"/>
                             <field name="course_date"/>
+                            <field name="course_end"/>
                             <field name="partner_id"/>
                         </group>
                     </sheet>
                 </form>
+            </field>
+        </record>
+
+        <record id="course_management_calendar" model="ir.ui.view">
+            <field name="name">Course Management Calendar</field>
+            <field name="model">course.management</field>
+            <field name="arch" type="xml">
+                <calendar string="course" mode="month" date_start="course_date" date_stop="course_end" color="partner_id"
+                          hide_time="true"
+                          event_limit="5">
+                    <field name="name" can_create="true" can_write="true" />
+                    <field name="partner_id" can_create="true" can_write="true" />
+                </calendar>
+
             </field>
         </record>
 
@@ -35,7 +56,7 @@
             <field name="name">Course Management Action</field>
             <field name="type">ir.actions.act_window</field>
             <field name="res_model">course.management</field>
-            <field name="view_mode">tree,form</field>
+            <field name="view_mode">tree,calendar,form</field>
         </record>
 
         <menuitem id="course_management_menu" name="Course Management" parent="student_main_menu"
