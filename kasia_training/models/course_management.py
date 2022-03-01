@@ -8,4 +8,4 @@ class CourseManagement(models.Model):
 
     name = fields.Char(string='Name', required='')
     course_date = fields.Datetime(string='Date', required=True)
-    partner_id = fields.Many2one('res.partner', string='Partner')
+    partner_id = fields.Many2one('res.partner', string='Partner', domain="[('is_profesor','=', True)]")
