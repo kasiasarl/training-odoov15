@@ -6,7 +6,7 @@
             <field name="name">Course Management Tree</field>
             <field name="model">course.management</field>
             <field name="arch" type="xml">
-                <tree string="">
+                <tree string="" decoration-primary="state=='new'">
                     <field name="name"/>
                     <field name="course_date"/>
                     <field name="course_end"/>
