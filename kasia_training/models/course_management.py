@@ -12,6 +12,17 @@ class CourseManagement(models.Model):
     partner_id = fields.Many2one('res.partner', string='Partner', domain="[('is_profesor','=', True)]", required=True)
     state = fields.Selection([('new', 'New'), ('validated', 'Validated'), ('end', 'End'), ('canceled', 'Canceled')],
                              default='new')
+    phone = fields.Char(string='Phone')
+    email = fields.Char(string='Email')
 
     def run_validate(self):
         self.write({'state': 'validated'})
+
+    @api.onchange('partner_id')
+    def _onchange_partner_id(self):
+        return {
+            'value': {
+                'phone': self.partner_id.phone,
+                'email': self.partner_id.email,
+            }
+        }
