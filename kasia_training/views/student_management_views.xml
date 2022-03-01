@@ -9,6 +9,7 @@
                     <field name="age"/>
                     <field name="sexe"/>
                     <field name="address"/>
+                    <field name="class_id"/>
                     <field name="birth_date"/>
                 </tree>
             </field>
@@ -27,6 +28,7 @@
                                 <field name="age" required="True"/>
                                 <field name="sexe" widget="radio" options="{'horizontal': true}"/>
                                 <field name="address"/>
+                                <field name="class_id"/>
                             </group>
                             <group>
                                 <field name="phone"/>

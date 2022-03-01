@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="student_class_tree" model="ir.ui.view">
+            <field name="name">Student Class Tree</field>
+            <field name="model">student.class</field>
+            <field name="arch" type="xml">
+                <tree string="">
+                    <field name="st_class"/>
+                    <field name="student_count"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="student_class_form" model="ir.ui.view">
+            <field name="name">Student Class Form</field>
+            <field name="model">student.class</field>
+            <field name="arch" type="xml">
+                <form string="">
+                    <sheet>
+                        <group>
+                            <field name="st_class"/>
+                            <field name="student_count"/>
+                        </group>
+                        <notebook>
+                            <page string="Student">
+                                <field name="student_ids">
+                                    <tree editable="top">
+                                        <field name="name"/>
+                                        <field name="age"/>
+                                        <field name="sexe"/>
+                                    </tree>
+                                </field>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+
+        <record id="student_class_action" model="ir.actions.act_window">
+            <field name="name">Class</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">student.class</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem id="student_class_menu" name="Class" parent="student_main_menu" action="student_class_action"/>
+
+    </data>
+</odoo>

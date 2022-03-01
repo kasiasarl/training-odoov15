@@ -27,6 +27,7 @@
         'views/student_management_views.xml',
         'views/course_management_views.xml',
         'views/res_partner_views.xml',
+        'views/student_class_views.xml',
         # wizads
     ],
     # only loaded in demonstration mode
