@@ -25,13 +25,14 @@
         # security
         'security/res_groups.xml',
         'security/ir.model.access.csv',
-
         # views
         'views/student_management_views.xml',
         'views/course_management_views.xml',
         'views/res_partner_views.xml',
         'views/student_class_views.xml',
         'views/website_templates.xml',
+        # report
+        'report/student_report.xml',
         # wizards
         'wizard/course_wizard_views.xml',
     ],

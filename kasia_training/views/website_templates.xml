@@ -15,6 +15,7 @@
                                     <th scope="col">Name</th>
                                     <th scope="col">Age</th>
                                     <th scope="col">Ref</th>
+                                    <th scope="col">Down</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -24,6 +25,7 @@
                                         <td><a t-att-href="'/student/%s'%stline.id"><span t-field="stline.name" /></a></td>
                                         <td><span t-field="stline.age" /> </td>
                                         <td><span t-field="stline.ref" /></td>
+                                        <td><a t-att-href="'/report/pdf/kasia_training.report_student/%s'%stline.id" target="_blank">Fiche Etudiant</a></td>
                                     </tr>
                                 </t>
                             </tbody>
