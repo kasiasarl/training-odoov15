@@ -2,6 +2,7 @@ id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
 access_student_management,student.management,model_student_management,base.group_user,1,0,0,0
 access_student_management_user,student.management,model_student_management,student_user,1,1,1,0
 access_student_management_manager,student.management,model_student_management,student_manager,1,1,1,1
+access_student_management_public,student.management,model_student_management,base.group_public,1,0,0,0
 
 access_course_management,course.management,model_course_management,base.group_user,1,1,1,1
 access_student_class,student.class,model_student_class,base.group_user,1,1,1,1

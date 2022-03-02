@@ -1,21 +1,14 @@
 # -*- coding: utf-8 -*-
-# from odoo import http
+from odoo import http
 
 
-# class KasiaTraining(http.Controller):
-#     @http.route('/kasia_training/kasia_training/', auth='public')
-#     def index(self, **kw):
-#         return "Hello, world"
+class StudentManagement(http.Controller):
+    @http.route('/student', auth='public', website=True)
+    def list(self, **kw):
+        StudentObject = http.request.env['student.management']
+        st_list = StudentObject.search([])
+        return http.request.render('kasia_training.student_list', {'student': st_list})
 
-#     @http.route('/kasia_training/kasia_training/objects/', auth='public')
-#     def list(self, **kw):
-#         return http.request.render('kasia_training.listing', {
-#             'root': '/kasia_training/kasia_training',
-#             'objects': http.request.env['kasia_training.kasia_training'].search([]),
-#         })
-
-#     @http.route('/kasia_training/kasia_training/objects/<model("kasia_training.kasia_training"):obj>/', auth='public')
-#     def object(self, obj, **kw):
-#         return http.request.render('kasia_training.object', {
-#             'object': obj
-#         })
+    @http.route('/student/<model("student.management"):student_data>', auth='public', website=True)
+    def single(self, student_data, **kw):
+        return http.request.render('kasia_training.student_page', {'stline': student_data})

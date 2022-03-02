@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <template id="student_list">
+            <t t-call="website.layout">
+                <t t-set="title">Student</t>
+                <div class="oe_structure">
+                    <div class="container">
+
+                        <h1>Student List</h1>
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th scope="col">#</th>
+                                    <th scope="col">Name</th>
+                                    <th scope="col">Age</th>
+                                    <th scope="col">Ref</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <t t-foreach="student" t-as="stline">
+                                    <tr>
+                                        <th scope="row"><span t-field="stline.id" /></th>
+                                        <td><a t-att-href="'/student/%s'%stline.id"><span t-field="stline.name" /></a></td>
+                                        <td><span t-field="stline.age" /> </td>
+                                        <td><span t-field="stline.ref" /></td>
+                                    </tr>
+                                </t>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </t>
+        </template>
+
+
+        <template id="student_page">
+            <t t-call="website.layout">
+                <t t-set="title">Student</t>
+                <div class="oe_structure">
+                    <div class="container">
+                        <h1>Student List</h1>
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th scope="col">#</th>
+                                    <th scope="col">Name</th>
+                                    <th scope="col">Age</th>
+                                    <th scope="col">Ref</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">
+                                        <span t-field="stline.id"/>
+                                    </th>
+                                    <td>
+                                        <span t-field="stline.name"/>
+                                    </td>
+                                    <td>
+                                        <span t-field="stline.age"/>
+                                    </td>
+                                    <td>
+                                        <span t-field="stline.ref"/>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </t>
+        </template>
+    </data>
+</odoo>
