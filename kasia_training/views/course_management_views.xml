@@ -22,8 +22,11 @@
             <field name="arch" type="xml">
                 <form string="">
                     <header>
-                        <button name="run_validate" class="oe_highlight" type="object" string="Validate" attrs="{'invisible':[('state','=','validated')]}"/>
-                        <button name="run_partner" type="object" string="Partner"/>
+                        <button name="run_validate" class="oe_highlight" type="object"
+                                string="Validate" attrs="{'invisible':[('state','=','validated')]}"
+                                groups="kasia_training.student_user"
+                        />
+                        <button name="run_partner" type="object" string="Partner" groups="kasia_training.student_manager"/>
                         <button name="run_wizard" type="object" string="Wizard"/>
                         <field name="state" widget="statusbar"  options="{'clickable': '1'}"/>
                     </header>
@@ -34,7 +37,7 @@
                             <field name="course_end"/>
                             <field name="partner_id" context="{'default_is_profesor':True}"/>
                             <field name="phone" />
-                            <field name="email" />
+                            <field name="email" groups="kasia_training.student_manager"/>
                             <field name="category_ids" widget="many2many_tags" />
                         </group>
                     </sheet>
