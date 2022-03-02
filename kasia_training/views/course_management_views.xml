@@ -33,6 +33,7 @@
                             <field name="partner_id" context="{'default_is_profesor':True}"/>
                             <field name="phone" />
                             <field name="email" />
+                            <field name="category_ids" widget="many2many_tags" />
                         </group>
                     </sheet>
                 </form>

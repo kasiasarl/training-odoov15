@@ -14,6 +14,7 @@ class CourseManagement(models.Model):
                              default='new')
     phone = fields.Char(string='Phone')
     email = fields.Char(string='Email')
+    category_ids = fields.Many2many('res.partner.category', string='Category')
 
     def run_validate(self):
         self.write({'state': 'validated'})
