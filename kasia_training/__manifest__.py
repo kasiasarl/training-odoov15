@@ -21,6 +21,7 @@
     # always loaded
     'data': [
         # data
+        'data/ir_sequence_data.xml',
         # security
         'security/res_groups.xml',
         'security/ir.model.access.csv',
