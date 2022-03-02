@@ -17,3 +17,4 @@ class StudentManagement(models.Model):
     birth_date = fields.Date(string='Birth date')
     biographie = fields.Html(string='Biographie')
     class_id = fields.Many2one('student.class', string='Class')
+    note = fields.Html(string='Note')

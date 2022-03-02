@@ -41,6 +41,9 @@
                                 <field name="biographie" nolabel="1"/>
                             </page>
                             <page string="Note">
+                                <field name="note"/>
+                            </page>
+                            <page string="Image">
                                 <field name="image_1920" widget="image"/>
                             </page>
                         </notebook>
