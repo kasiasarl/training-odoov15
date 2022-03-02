@@ -27,6 +27,20 @@ class CourseManagement(models.Model):
             'view_type': 'form',
             'views': [[False, 'form']],
             'target': 'new',
+            'context': {
+                'default_name': self.name,
+            }
+        }
+
+    def run_partner(self):
+        return {
+            'type': 'ir.actions.act_window',
+            'res_model': 'res.partner',
+            'view_mode': 'form',
+            'view_type': 'form',
+            'views': [[False, 'form']],
+            'target': 'new',
+            'res_id': self.partner_id.id,
         }
 
     @api.onchange('partner_id')

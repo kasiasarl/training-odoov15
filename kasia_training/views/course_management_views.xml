@@ -23,6 +23,7 @@
                 <form string="">
                     <header>
                         <button name="run_validate" class="oe_highlight" type="object" string="Validate" attrs="{'invisible':[('state','=','validated')]}"/>
+                        <button name="run_partner" type="object" string="Partner"/>
                         <button name="run_wizard" type="object" string="Wizard"/>
                         <field name="state" widget="statusbar"  options="{'clickable': '1'}"/>
                     </header>
