@@ -9,7 +9,7 @@
     """,
     'author': "KASIA",
     'website': "https://kasia.mg",
-    'category':'Sales',
+    'category': 'Sales',
     'version': '0.2',
 
     # any module necessary for this one to work correctly
@@ -22,7 +22,9 @@
     'data': [
         # data
         # security
+        'security/res_groups.xml',
         'security/ir.model.access.csv',
+
         # views
         'views/student_management_views.xml',
         'views/course_management_views.xml',
