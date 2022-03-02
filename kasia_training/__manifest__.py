@@ -28,7 +28,8 @@
         'views/course_management_views.xml',
         'views/res_partner_views.xml',
         'views/student_class_views.xml',
-        # wizads
+        # wizards
+        'wizard/course_wizard_views.xml',
     ],
     # only loaded in demonstration mode
     'demo': [

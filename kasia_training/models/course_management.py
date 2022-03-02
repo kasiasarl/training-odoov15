@@ -19,6 +19,16 @@ class CourseManagement(models.Model):
     def run_validate(self):
         self.write({'state': 'validated'})
 
+    def run_wizard(self):
+        return {
+            'type': 'ir.actions.act_window',
+            'res_model': 'course.wizard',
+            'view_mode': 'form',
+            'view_type': 'form',
+            'views': [[False, 'form']],
+            'target': 'new',
+        }
+
     @api.onchange('partner_id')
     def _onchange_partner_id(self):
         return {
