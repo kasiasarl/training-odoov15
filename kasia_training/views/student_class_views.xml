@@ -20,9 +20,16 @@
             <field name="arch" type="xml">
                 <form string="">
                     <sheet>
+                        <div class="oe_button_box" name="course_button_box">
+                            <button name="run_student_list"
+                                    type="object"
+                                    class="oe_stat_button"
+                                    icon="fa-list">
+                                <field name="student_count"/>
+                            </button>
+                        </div>
                         <group>
                             <field name="st_class"/>
-                            <field name="student_count"/>
                             <field name="student_age"/>
                         </group>
                         <notebook>

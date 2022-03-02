@@ -15,3 +15,14 @@ class StudentClass(models.Model):
     def _compute_student_count(self):
         for item in self:
             item.write({'student_count': len(item.student_ids), 'student_age': sum(item.student_ids.mapped('age'))})
+
+    def run_student_list(self):
+        return {
+            'type': 'ir.actions.act_window',
+            'res_model': 'student.management',
+            'view_mode': 'tree',
+            'view_type': 'form',
+            'views': [[False, 'tree']],
+            'target': 'current',
+            'domain': [('class_id','=', self.id)],
+        }
